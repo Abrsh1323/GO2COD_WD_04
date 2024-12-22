@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Gallery</title>
+  <style>
+    /* General styling */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 20px 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 5px;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: #fff;
+      font-size: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .lightbox .close:hover {
+      color: #f00;
+    }
+
+    @media (max-width: 600px) {
+      .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .lightbox .close {
+        font-size: 24px;
+        top: 15px;
+        right: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Gallery</h1>
+  <div class="gallery">
+    <a href="#img1"><img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1080"></a>
+    <a href="#img2"><img src="https://images.pexels.com/photos/4628676/pexels-photo-4628676.jpeg"></a>
+    <a href="#img3"><img src="https://cdn.pixabay.com/photo/2017/02/13/12/13/flower-2066267_1280.jpg"></a>
+    <a href="#img4"><img src="https://images.pexels.com/photos/5420759/pexels-photo-5420759.jpeg"></a>
+    <a href="#img5"><img src="https://images.unsplash.com/photo-1523606971962-4e421b9995d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1080"></a>
+    <a href="#img6"><img src="https://cdn.pixabay.com/photo/2016/11/29/09/11/landscape-1868959_1280.jpg"></a>
+  </div>
+  <div id="img1" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/11/landscape-1868959_1280.jpg">
+  </div>
+  <div id="img2" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://images.pexels.com/photos/4628676/pexels-photo-4628676.jpeg">
+  </div>
+  <div id="img3" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://cdn.pixabay.com/photo/2017/02/13/12/13/flower-2066267_1280.jpg">
+  </div>
+  <div id="img4" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://images.pexels.com/photos/5420759/pexels-photo-5420759.jpeg">
+  </div>
+  <div id="img5" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://images.unsplash.com/photo-1523606971962-4e421b9995d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-4.0.3&q=80&w=1080" alt="Image 5">
+  </div>
+  <div id="img6" class="lightbox">
+    <a href="#" class="close">&times;</a>
+    <img src="https://cdn.pixabay.com/photo/2016/11/29/09/11/landscape-1868959_1280.jpg">
+  </div>
+</body>
+</html>
